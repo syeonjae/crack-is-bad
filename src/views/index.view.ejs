@@ -6,10 +6,31 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <main>
-      <header class="header">hello !</header>
+    <main class="wrapper">
+      <header>
+        <h1 class="header">
+          <i>C</i>
+          rack is bad
+        </h1>
+      </header>
       <article>
-        <section></section>
+        <section>
+          <form>
+            <div class="filebox">
+              <input
+                class="upload-name"
+                value="Attachment"
+                placeholder="Attachment"
+                readonly
+              />
+              <label for="file">Find File</label>
+              <input type="file" id="file" accept="zip" />
+              <p>
+                <button type="submit">MODIFY</button>
+              </p>
+            </div>
+          </form>
+        </section>
       </article>
       <footer></footer>
     </main>
