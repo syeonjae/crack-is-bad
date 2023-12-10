@@ -1,7 +1,9 @@
 {
   "scripts": {
     "dev": "nodemon --watch \"src/**/*.ts\" --exec ts-node --files src/app.ts",
-    "build": "tsc -p .",
+    "build": "yarn build:js",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline && yarn copy-views",
+    "copy-views": "xcopy  src\\views dist\\views /E /I /H",
     "start": "node dist/app.js"
   },
   "dependencies": {
@@ -9,8 +11,23 @@
     "express": "^4.18.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.5",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/plugin-transform-runtime": "^7.23.4",
+    "@babel/preset-env": "^7.23.5",
+    "@babel/preset-typescript": "^7.23.3",
     "@types/express": "^4.17.21",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "babel-plugin-lodash": "^3.3.4",
+    "ejs": "^3.1.9",
+    "eslint": "^8.55.0",
+    "lodash": "^4.17.21",
     "ts-node": "^10.9.1",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   }
 }

@@ -1,0 +1,1 @@
+const fetchClient = async () => {};
